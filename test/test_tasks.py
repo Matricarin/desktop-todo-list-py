@@ -32,7 +32,11 @@ class TestSaveTasks:
 class TestGetNextTask:
     
     def test_return_one(self):
-        ...
+        tasks = []
+        id = get_next_task_id(tasks)
+        assert id == 1
         
     def test_return_valid_id(self):
-        ...
+        tasks = [{"id": 1, "title": "Task 1"}, {"id": 2, "title" : "Task2"}]
+        id = get_next_task_id(tasks)
+        assert id == 3
