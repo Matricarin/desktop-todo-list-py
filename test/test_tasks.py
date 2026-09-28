@@ -10,11 +10,16 @@ class TestLoadTasks:
         assert load_tasks(file) == []
         
     def test_load_tasks_success(self):
-        ...
+        file = "test/data/load_tasks_success.json"
+        tasks = load_tasks(file)
+        assert len(tasks) == 2            
         
     def test_load_tasks_decode_error(self):
-        ...
-        
+        file = "test/data/decode_error.json"
+        try:
+            load_tasks(file)
+        except Exception as e:
+            assert type(e) == type(json.JSONDecodeError)        
         
 class TestSaveTasks:
     
