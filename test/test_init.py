@@ -1,4 +1,4 @@
 import pytest
 
-def test_init():
+def test_init_sucess():
     assert 1 == 1
