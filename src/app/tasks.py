@@ -23,7 +23,7 @@ def save_tasks(file_path, tasks):
     file.parent.mkdir(parents=True, exist_ok=True)
     
     try:
-        json_str = json.dump(tasks, ensure_ascii=False, indent=2)
+        json_str = json.dumps(tasks, ensure_ascii=False, indent=2)
     except Exception as e:
         logging.error(f"Serialize error: {e}", exc_info=True)
         return False

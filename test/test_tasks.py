@@ -22,12 +22,14 @@ class TestLoadTasks:
             assert type(e) == type(json.JSONDecodeError)        
         
 class TestSaveTasks:
-    
-    def test_save_with_serialization_error(self):
-        ...
-        
+            
     def test_save_success(self):
-        ...
+        tasks = [{"id" : 1, "title" : "Task1"}, {"id" : 2, "title" : "Task2"}]
+        file = "test/data/saved.json"
+        save_tasks(file, tasks)
+        
+        saved_tasks = load_tasks(file)
+        assert len(saved_tasks) == 2
         
 class TestGetNextTask:
     
